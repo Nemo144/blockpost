@@ -28,6 +28,7 @@
 (define-public (write-post (message (string-utf8 500))) 
     (begin 
     (try! (stx-transfer? price tx-sender contract-owner))
+    ;; #[allow(unchecked_data)]
     (map-set posts tx-sender message)
     (var-set total-post (+ (var-get total-post) u1)) ;;logic to increment the total post
     (ok "Success")
