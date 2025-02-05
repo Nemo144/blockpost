@@ -11,7 +11,7 @@
 ;;
 
 ;; constants
-(define-constant contract-owner tx-sender) ;;tx-sender = contract deployer
+(define-constant contract-owner (as-contract tx-sender)) ;;tx-sender = contract deployer | "as-contract" changes the 'tx-sender' from the standard to the contract principal
 
 (define-constant price u1000000) ;; = 1STX
 ;;
